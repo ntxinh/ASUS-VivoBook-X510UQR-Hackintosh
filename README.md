@@ -1,0 +1,1 @@
+# Asus-VivoBook-15-X510UQR-High-Sierra-10.13.6-Hackintosh
