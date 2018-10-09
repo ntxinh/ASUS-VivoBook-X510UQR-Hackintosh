@@ -11,7 +11,7 @@
   + Wifi: Intel 8265/8275 M2 NGFF (802.11 AC (2x2))
   + Ethernet: No
   + Bluetooth: V4.1
-- **Audio:** Conexant Generic
+- **Audio:** Conexant Generic (Vendor ID: 0x14f11f72, 0x14f1 0x1f72, Conexant CX8050)
 - **Touchpad:** Elan 1300
 - **BIOS:** v301/302
 - Memory: SK Hynix 8GB DDR4 2400 MHz (up to 16 GB SDRAM) (2 slots)
