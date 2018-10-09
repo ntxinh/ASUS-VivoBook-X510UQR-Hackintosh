@@ -14,7 +14,7 @@
 - **Audio:** Conexant Generic
 - **Touchpad:** Elan 1300
 - **BIOS:** v301/302
-- Memory: SK Hynix 8GB DDR4 2400 MHz (up to 16 GB SDRAM)
+- Memory: SK Hynix 8GB DDR4 2400 MHz (up to 16 GB SDRAM) (2 slots)
 - Display: 15.6" (16:9) FHD (1920x1080) 60Hz Anti-Glare Panel 45% NTSC with 178˚ wide-viewing angle display
 - Storage:
   + Hard Drives: 1TB 5400RPM SATA HDD
