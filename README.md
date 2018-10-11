@@ -1,4 +1,6 @@
-# Asus-VivoBook-15-X510UQR-High-Sierra-10.13.6-Hackintosh
+# Asus VivoBook 15 X510UQR Hackintosh
+
+---
 
 # Version MacOS
 - 10.13.6 High Sierra
@@ -31,10 +33,17 @@
 # EDID
 - Dump by Extron EDID Manager
 
-# DSDT & Specification
+# DSDT & SSDT & Specification
 - Dump by AIDA64 Engineer
 
 # Not working
 - Sleep
 - HDMI not have audio
 - Not Show Percent Baterry
+
+# Special thanks
+- [tctien342](https://github.com/tctien342/)
+- [hieplpvip](https://github.com/hieplpvip/)
+- [chris1111](https://github.com/chris1111/)
+- https://www.tonymacx86.com/
+- https://www.insanelymac.com/
