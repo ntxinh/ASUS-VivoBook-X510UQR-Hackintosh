@@ -1,5 +1,9 @@
 # Asus-VivoBook-15-X510UQR-High-Sierra-10.13.6-Hackintosh
 
+# Version MacOS
+- 10.13.6 High Sierra
+- 10.14 Mojave
+
 # Specifications
 
 - **MainBoard:** ASUS X510UQR
@@ -23,3 +27,14 @@
 - Card Reader: SD/SDHC
 - WebCam: VGA Web Camera
 - Battery: 3 Cells 42 Whrs Battery
+
+# EDID
+- Dump by Extron EDID Manager
+
+# DSDT & Specification
+- Dump by AIDA64 Engineer
+
+# Not working
+- Sleep
+- HDMI not have audio
+- Not Show Percent Baterry
