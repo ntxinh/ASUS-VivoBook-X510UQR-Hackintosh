@@ -36,8 +36,8 @@
 # DSDT & SSDT & Specification
 - Dump by AIDA64 Engineer
 
-# Known issues (Always test sleep without external devices plugged in)
-- Freezes on wake from sleep
+# Known issues 
+- Freezes on wake from sleep (Always test sleep without external devices plugged in)
 - HDMI without Audio
 - Percent Baterry not display
 
@@ -161,3 +161,22 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 # Compare USB wifi vs card wifi
 
 The user-interface is poor and they tend to cause instability, especially with sleep.
+
+# Add Grub to Clover
+
+```xml
+<dict>
+    <key>Disabled</key>
+    <false/>
+    <key>Ignore</key>
+    <false/>
+    <key>Path</key>
+    <string>\EFI\manjaro\grubx64.efi</string>
+    <key>Title</key>
+    <string>Manjaro</string>
+    <key>Type</key>
+    <string>Linux</string>
+    <key>VolumeType</key>
+    <string>Internal</string>
+</dict>
+```
