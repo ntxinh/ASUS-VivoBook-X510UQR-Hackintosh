@@ -36,14 +36,124 @@
 # DSDT & SSDT & Specification
 - Dump by AIDA64 Engineer
 
-# Not working
-- Sleep
-- HDMI not have audio
-- Not Show Percent Baterry
+# Known issues
+- Freezes on wake from sleep
+- HDMI without Audio
+- Percent Baterry not display
 
 # Special thanks
-- [tctien342](https://github.com/tctien342/)
-- [hieplpvip](https://github.com/hieplpvip/)
-- [chris1111](https://github.com/chris1111/)
+- [tctien342](https://github.com/tctien342/) [EFI](https://github.com/tctien342/Asus-Vivobook-S510UA-High-Sierra-10.13-Hackintosh)
+- [hieplpvip](https://github.com/hieplpvip/) [VoodooI2C](https://github.com/hieplpvip/VoodooI2C)
+- [chris1111](https://github.com/chris1111/) [TP-LINK WIFI Network](https://github.com/chris1111/TP-LINK-WIFI-Network-macOS)
 - https://www.tonymacx86.com/
 - https://www.insanelymac.com/
+
+# References
+- https://www.asus.com/us/Laptops/ASUS-VivoBook-S15-S510UQ/specifications/
+- https://www.asus.com/us/Laptops/ASUS-VivoBook-S15-S510UA/specifications/
+- https://github.com/tctien342/Asus-Vivobook-S510UA-High-Sierra-10.13-Hackintosh/
+- https://www.tonymacx86.com/threads/guide-new-voodooi2c-asus-vivobook-s15-x510uar-10-13.245445/
+- https://hackintosher.com/guides/dual-boot-macos-drive-windows-10-already-installed-shared-drive/
+- https://hackintosher.com/guides/hackintosh-dual-boot-windows-10-and-macos-high-sierra/
+- https://www.insanelymac.com/forum/topic/330677-successguide-glasgoods-high-sierra-coffeelake-asus-strix-z370-g-i7-8700-gtx1080ti-uhd/
+- https://github.com/RehabMan/OS-X-Clover-Laptop-Config/
+- https://github.com/chris1111/Wireless-USB-Adapter-Clover
+
+# Pre install
+
+- Internal EFI partition > 200MB
+- Create/Shrink a partition name HACKINTOSH format FAT32/EXFAT 100GB
+
+# Create usb boot from MacOS/Hackintosh/VM MacOS
+
+```bash
+sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/YOUR_USB_NAME --applicationpath /Applications/Install\ macOS\ Sierra.app --nointeraction
+
+sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/USB --nointeraction --downloadassets
+```
+
+- Name version macOS:
+```bash
+/Applications/Install\ macOS\ Sierra.app/
+/Applications/Install\ macOS\ High\ Sierra.app/
+/Applications/Install\ macOS\ Mojave.app/
+```
+
+- Add Clover to USB & Add kext neccessary
+- Or Overwrite EFI Folder
+
+# BIOS Settings BEFORE:
+
+# BIOS Settings AFTER:
+
+# Step install
+- Choose (External) "Boot OS X Install from Install macOS High Sierra"
+- Language: English
+- Disk Utility
+- View -> Show All Devices
+- Select the drive you want to install macOS High Sierra on
+- ~~Click on Erase tab and as a name type HACKINTOSH or any other name you want.~~
+- ~~As Format choose Mac OS Extended (Journaled)~~
+- Scheme choose GUID Partition Map (Maybe not show) (Skip this step)
+- Click Partition
+- Format APFS -> Apply
+- Click Done and close Disk Utility window
+- Select Install macOS and click Continue
+- Once your system restarts, press the boot menu key again and boot to macOS High Sierra via USB 
+- Then select "Boot macOS from HACKINTOSH" (Maybe twice times or change another usb port)
+
+# Post Installation
+- Copy EFI from USB to EFI of HDD/SSD
+
+```bash
+diskutil list
+diskutil mount disk0s1
+# disk0s1 is EFI partion of internal HDD/SSD
+
+# OR
+
+sudo mkdir /Volumes/efi
+sudo mount -t msdos /dev/disk0s1 /Volumes/efi
+```
+
+# Wifi Solution
+- Use USB Wifi TP-Link Archer T2U v2 (AC600, MT7650)
+- https://github.com/chris1111/TP-LINK-WIFI-Network-macOS
+
+# Sleep Solution
+- Energy Saver -> Never sleep
+
+# App neccessary
+- Clover EFI bootloader
+- Clover Configurator
+- MaciASL
+- HWMonior
+
+# Verify feature after install:
+- [x] **Graphics UHD 620** (https://www.quora.com/How-many-GB-does-Intel-HD-Graphics-620-have)
+- [ ] Graphics GT 940MX (NO support now)
+- [x] **Sound**
+- [x] **WiFi** (Replace with USB Wifi or Card wifi)
+- [ ] Bluetooth (Replace with USB Wifi or Card wifi)
+- [x] Apple Store
+- [ ] iCloud
+- [x] External USB headphone
+- [x] USB 2.0
+- [x] USB 3.0
+- [x] Adjust brightness
+- [ ] Temporature
+- [x] Fn feature
+- [x] Led light keyboard
+- [ ] Sleep power (Can not wake up, can use power button to wake up but trackpad will not work)
+- [ ] Show percent battery (Not show)
+- [x] Trackpad (Left/Right click not good)
+- [x] Full 4 cores
+- ~~[ ] Ethernet (This laptop not support)~~
+- [ ] Hardware Acceleration
+- [ ] Personal Hotspot
+- [ ] Power Management and P-States  
+- [ ] iMessage
+- [ ] Airdrop
+- [ ] AirPlay
+- [ ] iBooks
+- [ ] HandOff
