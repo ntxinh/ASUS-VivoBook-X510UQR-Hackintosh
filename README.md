@@ -36,7 +36,7 @@
 # DSDT & SSDT & Specification
 - Dump by AIDA64 Engineer
 
-# Known issues
+# Known issues (Always test sleep without external devices plugged in)
 - Freezes on wake from sleep
 - HDMI without Audio
 - Percent Baterry not display
@@ -157,3 +157,7 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 - [ ] AirPlay
 - [ ] iBooks
 - [ ] HandOff
+
+# Compare USB wifi vs card wifi
+
+The user-interface is poor and they tend to cause instability, especially with sleep.
