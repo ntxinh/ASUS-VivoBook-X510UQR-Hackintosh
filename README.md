@@ -94,13 +94,14 @@ sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallme
 - Select the drive you want to install macOS High Sierra on
 - ~~Click on Erase tab and as a name type HACKINTOSH or any other name you want.~~
 - ~~As Format choose Mac OS Extended (Journaled)~~
-- Scheme choose GUID Partition Map (Maybe not show) (Skip this step)
+- ~~Scheme choose GUID Partition Map (Maybe not show)~~
 - Click Partition
 - Format APFS -> Apply
 - Click Done and close Disk Utility window
 - Select Install macOS and click Continue
 - Once your system restarts, press the boot menu key again and boot to macOS High Sierra via USB 
 - Then select "Boot macOS from HACKINTOSH" (Maybe twice times or change another usb port)
+- All installation take 3 times reboot
 
 # Post Installation
 - Copy EFI from USB to EFI of HDD/SSD
@@ -131,23 +132,23 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 
 # Verify feature after install:
 - [x] **Graphics UHD 620** (https://www.quora.com/How-many-GB-does-Intel-HD-Graphics-620-have)
-- [ ] Graphics GT 940MX (NO support now)
+- [x] Graphics GT 940MX (NO support now)
 - [x] **Sound**
 - [x] **WiFi** (Replace with USB Wifi or Card wifi)
-- [ ] Bluetooth (Replace with USB Wifi or Card wifi)
+- [x] Bluetooth (Replace with USB Wifi or Card wifi)
 - [x] Apple Store
 - [ ] iCloud
 - [x] External USB headphone
 - [x] USB 2.0
 - [x] USB 3.0
 - [x] Adjust brightness
-- [ ] Temporature
 - [x] Fn feature
 - [x] Led light keyboard
-- [ ] Sleep power (Can not wake up, can use power button to wake up but trackpad will not work)
-- [ ] Show percent battery (Not show)
+- [x] Sleep power (Can not wake up, can use power button to wake up but trackpad will not work)
+- [x] Show percent battery (Not show)
 - [x] Trackpad (Left/Right click not good)
 - [x] Full 4 cores
+- [ ] Temporature (HWMonitor)
 - ~~[ ] Ethernet (This laptop not support)~~
 - [ ] Hardware Acceleration
 - [ ] Personal Hotspot
