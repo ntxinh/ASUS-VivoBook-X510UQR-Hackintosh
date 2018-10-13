@@ -34,7 +34,7 @@
 - Dump by Extron EDID Manager
 
 # DSDT & SSDT & Specification
-- Dump by AIDA64 Engineer
+- Dump by AIDA64 Engineer or Clover (F1 -> F4)
 
 # Known issues 
 - Freezes on wake from sleep (Always test sleep without external devices plugged in)
@@ -126,9 +126,10 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 
 # App neccessary
 - Clover EFI bootloader
-- Clover Configurator
-- MaciASL
-- HWMonior
+- Clover Configurator (config.plist)
+- MaciASL (Edit .dsl & save to .aml file)
+- HWSensors
+- iasl (Copy to /usr/bin/)
 
 # Verify feature after install:
 - [x] **Graphics UHD 620** (https://www.quora.com/How-many-GB-does-Intel-HD-Graphics-620-have)
@@ -181,3 +182,8 @@ The user-interface is poor and they tend to cause instability, especially with s
     <string>Internal</string>
 </dict>
 ```
+
+# Reverse Trackpad and Mouse Scroll Direction
+
+- System Preferences > Mouse (or System Preferences > Trackpad > Scroll & Zoom, depending on your input device).
+- Scroll direction: natural => Uncheck
