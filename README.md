@@ -39,8 +39,9 @@
 
 # Known issues 
 - HDMI without Audio
-- ~~Freezes on wake from sleep (Always test sleep without external devices plugged in)~~
-- ~~ercent Baterry not display~~
+- Trackpad - Sometime left & right click not working
+- ~~Freezes on wake from sleep (Always test sleep without external devices plugged in)~~ (Patch fixed it)
+- ~~Battery status~~ (Patch fixed it)
 
 # Special thanks
 - [tctien342](https://github.com/tctien342/) [EFI](https://github.com/tctien342/Asus-Vivobook-S510UA-High-Sierra-10.13-Hackintosh)
@@ -157,7 +158,7 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 - [x] Trackpad (Left/Right click not good)
 - [x] Full 4 cores
 - [ ] Temporature (HWMonitor)
-- [x] Disabling discrete graphics GPU
+- [x] Disabling discrete graphics GPU (https://www.tonymacx86.com/threads/guide-disabling-discrete-graphics-in-dual-gpu-laptops.163772/)
 - ~~[ ] Ethernet (This laptop not support)~~
 - [ ] Hardware Acceleration
 - [ ] Personal Hotspot

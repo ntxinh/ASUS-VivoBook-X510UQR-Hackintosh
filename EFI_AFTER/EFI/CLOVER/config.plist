@@ -424,7 +424,7 @@
 		<key>#DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>Arguments</key>
-		<string>-igfxbeta kext-dev-mode=1 -igfxdvmtbeta abm_firstpolldelay=8000</string>
+		<string>abm_firstpolldelay=8000 kext-dev-mode=1 -igfxdvmtbeta -igfxbeta</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>NeverHibernate</key>
@@ -592,10 +592,10 @@
 		<dict>
 			<key>Custom</key>
 			<data>
-			AP///////wAGEBKgAAAAABwWAQS1MBt4Im+xp1VMniUMUFQAAAAB
-			AQEBAQEBAQEBAQEBAQEBFDeApnA4LkBsMKoAWMEQAAAYAAAA/ABp
-			TWFjCiAgICAgICAgAAAA/gBBVU8KICAgICAgICAgAAAA/gBCMTU2
-			SEFOMDIuMSAKAEk=
+			AP///////wAGr+0hAAAAAAAaAQSVIhN4ArDllFhakighUFQAAAAB
+			AQEBAQEBAQEBAQEBAQEBFDeApnA4LkBsMKoAWMEQAAAYAAAADwAA
+			AAAAAAAAAAAAAAAgAAAA/gBBVU8KICAgICAgICAgAAAA/gBCMTU2
+			SEFOMDIuMSAKAI4=
 			</data>
 			<key>Inject</key>
 			<true/>

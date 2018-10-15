@@ -1,7 +1,13 @@
 # MANUAL I2C PATCH IF NOT USING HOTPATCH
 
+0. PARSEOP_ZERO agressive patch
+
+```
+```
+
 1. Replace all scope _SB.PCI0.I2C1 with this:
 
+- DSDT.dsl
 ```
     Scope (_SB.PCI0.I2C1)
     {
@@ -125,7 +131,8 @@
 ```
 
 2. Add Window10 Patch:
-    
+
+- DSDT.dsl
 ```
 # Windows 10 DSDT Patch for VoodooI2C
 # Allows I2C controllers and devices to be discovered by OS X.
@@ -134,7 +141,8 @@ into_all method code_regex If\s+\([\\]?_OSI\s+\(\"Windows\s2015\"\)\) replace_ma
 ```
 
 3. Add GPIO Controller Enable
-    
+
+- DSDT.dsl
 ```
 # GPI0 Status patch
 # Ensures that OS X can enumerate the GPI0 controller
@@ -145,4 +153,40 @@ into method label _STA parent_label GPI0 replace_content begin
 Return (0x0F)
 
 end;
+```
+
+4. Disabling discrete graphics in dual-GPU laptops
+
+- SSDT-8.dsl
+```
+Method (_INI, 0, NotSerialized)  // _INI: Initialize
+{
+    Store (Zero, \_SB.PCI0.RP01.PEGP._ADR)
+    //added to turn nvidia/radeon off
+    External(\_SB.PCI0.RP01.PEGP._OFF, MethodObj)
+    _OFF()
+}
+```
+
+- DSDT.dsl
+```
+Method (_REG, 2, NotSerialized)  // _REG: Region Availability
+{
+    If (LEqual (Arg0, 0x03))
+    {
+        Store (Arg1, ECFL)
+    }
+    //added to turn nvidia/radeon off
+    If (LAnd(LEqual(Arg0,3),LEqual(Arg1,1)))
+    {
+        External(\_SB.PCI0.RP01.PEGP._OFF, MethodObj)
+        \_SB.PCI0.RP01.PEGP._OFF()
+        Store (\_SB.PCI0.LPCB.EC0.RRAM (0x0521), Local0)
+        And (Local0, 0xCF, Local0)
+        \_SB.PCI0.LPCB.EC0.WRAM (0x0521, Local0)
+        \_SB.PCI0.LPCB.EC0.WRAM (0x0520, 0x89)
+        \_SB.PCI0.LPCB.EC0.WRAM (0x03A4, Zero)
+        \_SB.PCI0.LPCB.EC0.WRAM (0x03A5, Zero)
+    }
+}
 ```
