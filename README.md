@@ -31,7 +31,8 @@
 - Battery: 3 Cells 42 Whrs Battery
 
 # EDID
-- Dump by Extron EDID Manager
+- Windows: Dump by Extron EDID Manager
+- Linux: `xrandr --props`
 
 # DSDT & SSDT & Specification
 - Dump by AIDA64 Engineer or Clover (F1 -> F4)
