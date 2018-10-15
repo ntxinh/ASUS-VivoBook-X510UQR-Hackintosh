@@ -38,9 +38,9 @@
 - Dump by AIDA64 Engineer or Clover (F1 -> F4)
 
 # Known issues 
-- Freezes on wake from sleep (Always test sleep without external devices plugged in)
 - HDMI without Audio
-- Percent Baterry not display
+- ~~Freezes on wake from sleep (Always test sleep without external devices plugged in)~~
+- ~~ercent Baterry not display~~
 
 # Special thanks
 - [tctien342](https://github.com/tctien342/) [EFI](https://github.com/tctien342/Asus-Vivobook-S510UA-High-Sierra-10.13-Hackintosh)
@@ -157,6 +157,7 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 - [x] Trackpad (Left/Right click not good)
 - [x] Full 4 cores
 - [ ] Temporature (HWMonitor)
+- [x] Disabling discrete graphics GPU
 - ~~[ ] Ethernet (This laptop not support)~~
 - [ ] Hardware Acceleration
 - [ ] Personal Hotspot
