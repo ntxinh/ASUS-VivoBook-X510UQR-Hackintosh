@@ -45,6 +45,7 @@
 - [tctien342](https://github.com/tctien342/) [EFI](https://github.com/tctien342/Asus-Vivobook-S510UA-High-Sierra-10.13-Hackintosh)
 - [hieplpvip](https://github.com/hieplpvip/) [VoodooI2C](https://github.com/hieplpvip/VoodooI2C)
 - [chris1111](https://github.com/chris1111/) [TP-LINK WIFI Network](https://github.com/chris1111/TP-LINK-WIFI-Network-macOS)
+- [RehabMan](https://github.com/RehabMan/)
 - https://www.tonymacx86.com/
 - https://www.insanelymac.com/
 
