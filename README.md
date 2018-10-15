@@ -136,6 +136,7 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 - IORegistryExplorer https://www.tonymacx86.com/threads/guide-how-to-make-a-copy-of-ioreg.58368/
 - patchmatic https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/
 - debug tool https://www.tonymacx86.com/threads/tool-generate-proper-problem-reporting-files.235953/
+- Generate refs.txt `pbpaste>refs.txt`
 
 # Verify feature after install:
 - [x] **Graphics UHD 620** (https://www.quora.com/How-many-GB-does-Intel-HD-Graphics-620-have)
