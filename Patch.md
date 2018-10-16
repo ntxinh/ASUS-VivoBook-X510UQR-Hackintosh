@@ -159,34 +159,33 @@ end;
 
 - SSDT-8.dsl
 ```
-Method (_INI, 0, NotSerialized)  // _INI: Initialize
-{
-    Store (Zero, \_SB.PCI0.RP01.PEGP._ADR)
-    //added to turn nvidia/radeon off
-    External(\_SB.PCI0.RP01.PEGP._OFF, MethodObj)
-    _OFF()
-}
+        Method (_INI, 0, NotSerialized)  // _INI: Initialize
+        {
+            Store (Zero, \_SB.PCI0.RP01.PEGP._ADR)
+            //added to turn nvidia/radeon off
+            External(\_SB.PCI0.RP01.PEGP._OFF, MethodObj)
+            _OFF()
+        }
 ```
 
 - DSDT.dsl
 ```
-Method (_REG, 2, NotSerialized)  // _REG: Region Availability
-{
-    If (LEqual (Arg0, 0x03))
-    {
-        Store (Arg1, ECFL)
-    }
-    //added to turn nvidia/radeon off
-    If (LAnd(LEqual(Arg0,3),LEqual(Arg1,1)))
-    {
-        External(\_SB.PCI0.RP01.PEGP._OFF, MethodObj)
-        \_SB.PCI0.RP01.PEGP._OFF()
-        Store (\_SB.PCI0.LPCB.EC0.RRAM (0x0521), Local0)
-        And (Local0, 0xCF, Local0)
-        \_SB.PCI0.LPCB.EC0.WRAM (0x0521, Local0)
-        \_SB.PCI0.LPCB.EC0.WRAM (0x0520, 0x89)
-        \_SB.PCI0.LPCB.EC0.WRAM (0x03A4, Zero)
-        \_SB.PCI0.LPCB.EC0.WRAM (0x03A5, Zero)
-    }
-}
+            Method (_REG, 2, NotSerialized)  // _REG: Region Availability
+            {
+                If (LEqual (Arg0, 0x03))
+                {
+                    Store (Arg1, ECFL)
+                }
+                //added to turn nvidia/radeon off
+                If (LAnd(LEqual(Arg0,3),LEqual(Arg1,1)))
+                {
+                    \_SB.PCI0.LPCB.EC0.SPIN (0x96, Zero)
+                    Store (\_SB.PCI0.LPCB.EC0.RRAM (0x0521), Local0)
+                    And (Local0, 0xCF, Local0)
+                    \_SB.PCI0.LPCB.EC0.WRAM (0x0521, Local0)
+                    \_SB.PCI0.LPCB.EC0.WRAM (0x0520, 0x89)
+                    \_SB.PCI0.LPCB.EC0.WRAM (0x03A4, Zero)
+                    \_SB.PCI0.LPCB.EC0.WRAM (0x03A5, Zero)
+                }
+            }
 ```
