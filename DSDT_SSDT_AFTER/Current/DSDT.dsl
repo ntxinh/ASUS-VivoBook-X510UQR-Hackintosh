@@ -40223,15 +40223,11 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                 If (LAnd(LEqual(Arg0,3),LEqual(Arg1,1)))
                 {
                     \_SB.PCI0.LPCB.EC0.SPIN (0x96, Zero)
-                }
-                //added to turn nvidia/radeon off
-                If (LAnd(LEqual(Arg0,3),LEqual(Arg1,1)))
-                {
-                    Store (\_SB.PCI0.LPCB.EC0.RRAM (0x0521), Local0)            
-                    And (Local0, 0xCF, Local0)            
-                    \_SB.PCI0.LPCB.EC0.WRAM (0x0521, Local0)            
-                    \_SB.PCI0.LPCB.EC0.WRAM (0x0520, 0x89)            
-                    \_SB.PCI0.LPCB.EC0.WRAM (0x03A4, Zero)            
+                    Store (\_SB.PCI0.LPCB.EC0.RRAM (0x0521), Local0)
+                    And (Local0, 0xCF, Local0)
+                    \_SB.PCI0.LPCB.EC0.WRAM (0x0521, Local0)
+                    \_SB.PCI0.LPCB.EC0.WRAM (0x0520, 0x89)
+                    \_SB.PCI0.LPCB.EC0.WRAM (0x03A4, Zero)
                     \_SB.PCI0.LPCB.EC0.WRAM (0x03A5, Zero)
                 }
             }
