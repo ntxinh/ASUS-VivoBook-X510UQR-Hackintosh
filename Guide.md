@@ -1,3 +1,8 @@
+# PRE INSTALLATION
+
+- Internal EFI partition > 200MB
+- Create/Shrink a partition name HACKINTOSH format FAT32/EXFAT 100GB
+
 # BIOS SETTINGS
 
 ## BIOS Settings BEFORE:
@@ -95,30 +100,50 @@ sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallme
 ```bash
 diskutil list
 diskutil mount disk0s1
+
+# OR
+
+sudo mkdir /Volumes/efi
+sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 ```
 
   + Copy EFI Folder to USB EFI / ESP Partition
 
 # INSTALL macOS
 
-- Insert  the macOS High Sierra USB Installer into computer USB port.
+- Insert  the macOS USB Installer into computer USB port.
 - Start PC and immediately press keyboard ESC.
 - From Boot Menu, choose your USB thumb drive.
 - Clover boot menu 
 - Choose - Boot OS X install from Install macOS ..
-- Choose Language
+- Choose Language : English
 - Select Disk Utility
 - From Disk Utility Menu --> View / Show All Devices
 - ~~Erase, disk. Give Name / Format: Mac OS Extended ( Journaled) / Scheme: GUID Partition Map~~
 - Partition, Format: APFS and apply
+- Click Done and close Disk Utility window
 - From macOS Utilities screen select Install macOS
 - Continue
 - Agree
-- Select Drive Macintosh or whatever you named it.
+- Select Drive Macintosh or whatever you named it (HACKINTOSH).
 - macOS is now installing
-- Wait...
-- Success
+- Once your system restarts, press the boot menu key (ESC) again and boot to macOS via USB 
+- Then select "Boot macOS from HACKINTOSH" (Maybe twice times or change another usb port)
+- All installation take 3 times reboot
 
 # POST INSTALLATION
 
 - Copy POST EFI folder to your EFI / ESP Partition on your drive
+
+## Trackpad - Tap to click
+
+- System Preferences > Trackpad > Point & Click > Tap to click => Checked
+
+## Reverse Trackpad and Mouse Scroll Direction
+
+- System Preferences > Mouse (or System Preferences > Trackpad > Scroll & Zoom, depending on your input device).
+- Scroll direction: natural => Unchecked
+
+## Add keyboard input source
+
+- System Preferences > Keyboard > Input Source
