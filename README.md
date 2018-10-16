@@ -128,7 +128,7 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 - Energy Saver -> Never sleep
 
 # App neccessary
-- Clover EFI bootloader https://sourceforge.net/projects/cloverefiboot/
+- Clover EFI bootloader https://sourceforge.net/projects/cloverefiboot/ (Using v4522)
 - Clover Configurator (config.plist) https://mackie100projects.altervista.org/download-clover-configurator/
 - MaciASL (Edit .dsl & save to .aml file) https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/
 - iasl (`sudo cp iasl /usr/bin/` `iasl -dl DSDT.aml SSDT*.aml`) https://bitbucket.org/RehabMan/acpica/downloads/
