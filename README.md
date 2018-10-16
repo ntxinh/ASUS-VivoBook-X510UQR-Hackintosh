@@ -256,3 +256,5 @@ The user-interface is poor and they tend to cause instability, especially with s
 - [ ] Speedstep
 - [ ] Benchmark
 - [ ] Native Power Management
+- [ ] Disable Apple System Integrity Protection ( SIP )
+- [ ] TIDY CLOVER BOOT SCREEN
