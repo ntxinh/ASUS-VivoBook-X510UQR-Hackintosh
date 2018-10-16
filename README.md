@@ -30,6 +30,8 @@
 - WebCam: VGA Web Camera
 - Battery: 3 Cells 42 Whrs Battery
 
+_Recommed replace card wifi with DW1560 (Broadcom BCM4352, M2, NGFF)_
+
 # EDID
 - Windows: Dump by Extron EDID Manager
 - Linux: `xrandr --props`
@@ -39,7 +41,7 @@
 
 # Known issues 
 - HDMI without Audio
-- Trackpad - Sometime left & right click not working
+- ~~Trackpad - Sometime left & right click not working~~ (Use Tab to click)
 - ~~Freezes on wake from sleep (Always test sleep without external devices plugged in)~~ (Patch fixed it)
 - ~~Battery status~~ (Patch fixed it)
 
@@ -87,7 +89,50 @@ sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallme
 
 # BIOS Settings BEFORE:
 
+_F2 to enter BIOS - Switch to Advanced Mode F7_
+
+- Advanced \ Internal Pointing Device : Enabled
+- Advanced \ Wake On Lid Open : Enabled
+- Advanced \ Intel Virtualization Technology : Enabled
+- Advanced \ Intel AES-NI : Enabled
+- Advanced \ VT-d : Enabled
+- Advanced \ SMART Settings \ SMART Self Test : On
+- Advanced \ Network Stack Configuration \ Network Stack : Disabled
+- Advanced \ USB Configuration \ Legacy USB Support : Enabled
+- Advanced \ USB Configuration \ USB Mass Storage Driver Support : Enabled
+- Advanced \ Graphics Configuration \ DVMT Pre-Allocated : 64M
+- Advanced \ SATA Configuration \ SATA Mode Selection : AHCI
+- Boot \ CSM Support : Enabled
+- Boot \ Launch PXE OpROM policy : Enabled
+- Security \ I/O Interface Security \ Wireless Network Interface : UnLock
+- Security \ I/O Interface Security \ HD Audio Interface : UnLock
+- Security \ Secure Boot \ Secure Boot Control : Enabled
+
 # BIOS Settings AFTER:
+
+- __Exit \ Load Optimized Defaults : Yes__
+- Advanced \ Internal Pointing Device : Enabled
+- Advanced \ Wake On Lid Open : Enabled
+- Advanced \ Intel Virtualization Technology : Enabled
+- Advanced \ Intel AES-NI : Enabled
+- __Advanced \ VT-d : Disabled__
+- Advanced \ SMART Settings \ SMART Self Test : On
+- __Advanced \ Network Stack Configuration \ Network Stack : Disabled__
+- __Advanced \ USB Configuration \ Legacy USB Support : Auto__
+- Advanced \ USB Configuration \ USB Mass Storage Driver Support : Enabled
+- __Advanced \ Graphics Configuration \ DVMT Pre-Allocated : 64M__
+- Advanced \ SATA Configuration \ SATA Mode Selection : AHCI
+- __Boot \ Fast Boot : Disabled__
+- __Boot \ CSM Support : Disabled__
+- Boot \ Launch PXE OpROM policy : Enabled
+- Security \ I/O Interface Security \ Wireless Network Interface : UnLock
+- Security \ I/O Interface Security \ HD Audio Interface : UnLock
+- Security \ I/O Interface Security \ USB Interface Security \ USB Interface : UnLock
+- Security \ I/O Interface Security \ USB Interface Security \ External Ports : UnLock
+- Security \ I/O Interface Security \ USB Interface Security \ BlueTooth : UnLock
+- Security \ I/O Interface Security \ USB Interface Security \ CMOS Camere : UnLock
+- Security \ I/O Interface Security \ USB Interface Security \ Card Reader : UnLock
+- __Security \ Secure Boot \ Secure Boot Control : Disabled__
 
 # Step install
 - Choose (External) "Boot OS X Install from Install macOS High Sierra"
@@ -146,7 +191,6 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 - [x] **WiFi** (Replace with USB Wifi or Card wifi)
 - [x] Bluetooth (Replace with USB Wifi or Card wifi)
 - [x] Apple Store
-- [ ] iCloud
 - [x] External USB headphone
 - [x] USB 2.0
 - [x] USB 3.0
@@ -157,12 +201,13 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 - [x] Show percent battery (Not show)
 - [x] Trackpad (Left/Right click not good)
 - [x] Full 4 cores
-- [ ] Temporature (HWMonitor)
+- [x] Temporature (HWMonitor)
 - [x] Disabling discrete graphics GPU (https://www.tonymacx86.com/threads/guide-disabling-discrete-graphics-in-dual-gpu-laptops.163772/)
 - ~~[ ] Ethernet (This laptop not support)~~
 - [ ] Hardware Acceleration
 - [ ] Personal Hotspot
-- [ ] Power Management and P-States  
+- [ ] Power Management and P-States
+- [ ] iCloud
 - [ ] iMessage
 - [ ] Airdrop
 - [ ] AirPlay
@@ -195,4 +240,19 @@ The user-interface is poor and they tend to cause instability, especially with s
 # Reverse Trackpad and Mouse Scroll Direction
 
 - System Preferences > Mouse (or System Preferences > Trackpad > Scroll & Zoom, depending on your input device).
-- Scroll direction: natural => Uncheck
+- Scroll direction: natural => Unchecked
+
+# Trackpad - Tap to click
+
+- System Preferences > Trackpad > Point & Click > Tap to click => Checked
+
+# Add keyboard input source
+
+- System Preferences > Keyboard > Input Source
+
+# To do
+
+- [ ] EC Reset
+- [ ] Speedstep
+- [ ] Benchmark
+- [ ] Native Power Management
