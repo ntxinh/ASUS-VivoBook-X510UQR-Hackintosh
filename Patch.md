@@ -167,7 +167,7 @@ end;
 
 4. Disabling discrete graphics in dual-GPU laptops
 
-- SSDT-8.dsl
+- SSDT-8.dsl : Look for "Method (_INI"
 ```
         Method (_INI, 0, NotSerialized)  // _INI: Initialize
         {
@@ -178,7 +178,7 @@ end;
         }
 ```
 
-- DSDT.dsl
+- DSDT.dsl: Look for "Method (_REG"
 ```
             Method (_REG, 2, NotSerialized)  // _REG: Region Availability
             {
