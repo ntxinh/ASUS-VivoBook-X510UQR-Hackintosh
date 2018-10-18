@@ -64,12 +64,12 @@ _Recommed replace card wifi with DW1560 (Broadcom BCM4352, M2, NGFF)_
 
 # KNOWN ISSUES
 - ~~HDMI without Audio~~
-- ~~Trackpad - Sometime left & right click not working~~ (Use Tab to click)
+- ~~Trackpad - Sometime left & right click not working~~ (Use Tap to click)
 - ~~Freezes on wake from sleep (Always test sleep without external devices plugged in)~~ (Patch fixed it)
 - ~~Battery status~~ (Patch fixed it)
 
 # WIFI SOLUTION
-- Use USB Wifi TP-Link Archer T2U v2 (AC600, MT7650)
+- [Use USB Wifi TP-Link Archer T2U v2 (AC600, MT7650)](https://www.tp-link.com/en/products/details/cat-11_Archer-T2U.html)
 - https://github.com/chris1111/TP-LINK-WIFI-Network-macOS
 
 # SPECIAL THANKS
