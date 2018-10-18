@@ -144,6 +144,7 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 - System Preferences > Mouse (or System Preferences > Trackpad > Scroll & Zoom, depending on your input device).
 - Scroll direction: natural => Unchecked
 
-## Add keyboard input source
+## HDMI Audio
 
-- System Preferences > Keyboard > Input Source
+- Plug HDMI Cable
+- System Preferences > Sound > Output > Select "Internal Speakers" or "Headphones"
