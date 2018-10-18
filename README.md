@@ -45,9 +45,9 @@ _Recommed replace card wifi with DW1560 (Broadcom BCM4352, M2, NGFF)_
 - [x] Adjust brightness
 - [x] Fn feature
 - [x] Led light keyboard
-- [x] Sleep power (Can not wake up, can use power button to wake up but trackpad will not work)
-- [x] Show percent battery (Not show)
-- [x] Trackpad (Left/Right click not good)
+- [x] Sleep power
+- [x] Battery
+- [x] Trackpad
 - [x] Full 4 cores
 - [x] Temporature (HWMonitor)
 - [x] Disabling discrete graphics GPU (https://www.tonymacx86.com/threads/guide-disabling-discrete-graphics-in-dual-gpu-laptops.163772/)
@@ -63,7 +63,7 @@ _Recommed replace card wifi with DW1560 (Broadcom BCM4352, M2, NGFF)_
 - [ ] HandOff
 
 # KNOWN ISSUES
-- HDMI without Audio
+- ~~HDMI without Audio~~
 - ~~Trackpad - Sometime left & right click not working~~ (Use Tab to click)
 - ~~Freezes on wake from sleep (Always test sleep without external devices plugged in)~~ (Patch fixed it)
 - ~~Battery status~~ (Patch fixed it)
