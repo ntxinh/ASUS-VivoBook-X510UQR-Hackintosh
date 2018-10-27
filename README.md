@@ -18,7 +18,7 @@
   + Ethernet: No
   + Bluetooth: V4.1
 - **Audio:** Conexant Generic (Vendor ID: 0x14f11f72, 0x14f1 0x1f72, Conexant CX8050)
-- **Touchpad:** Elan 1300
+- **Touchpad:** ELAN 1300 (I2C)
 - **BIOS:** v301/302
 - Memory: SK Hynix 8GB DDR4 2400 MHz (up to 16 GB SDRAM) (2 slots)
 - Display: 15.6" (16:9) FHD (1920x1080) 60Hz Anti-Glare Panel 45% NTSC with 178˚ wide-viewing angle display
