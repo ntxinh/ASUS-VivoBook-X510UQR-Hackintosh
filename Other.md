@@ -33,7 +33,7 @@
 
 The user-interface is poor and they tend to cause instability, especially with sleep.
 
-# Add Grub to Clover
+# Add Grub/Grub2 to Clover
 
 ```xml
 <dict>
@@ -50,6 +50,86 @@ The user-interface is poor and they tend to cause instability, especially with s
     <key>VolumeType</key>
     <string>Internal</string>
 </dict>
+```
+
+# Add Arch Linux to Clover
+
+```bash
+sudo umount /boot
+sudo blkid
+# EFI: e6e13a43-d400-4d6b-8919-c9c3e5f7814f
+# Root: 0448e76a-c71c-4b2c-938a-daca4f9f611b
+sudo nano /etc/fstab
+```
+
+- /etc/fstab:
+```
+PARTUUID=e6e13a43-d400-4d6b-8919-c9c3e5f7814f     /boot    vfat
+```
+
+```
+sudo mount PARTUUID=e6e13a43-d400-4d6b-8919-c9c3e5f7814f /boot
+sudo cp /etc/mkinitcpio.d/linux.preset /etc/mkinitcpio.d/linux.backup
+sudo nano /etc/mkinitcpio.d/linux.preset
+```
+
+- /etc/mkinitcpio.d/linux.preset:
+```
+# mkinitcpio preset file for the 'linux' package
+
+ALL_config="/etc/mkinitcpio.conf"
+ALL_kver="/boot/vmlinuz-linux"
+
+PRESETS=('default' 'fallback')
+
+#default_config="/etc/mkinitcpio.conf"
+default_image="/boot/initramfs-linux.img"
+
+#fallback_config="/etc/mkinitcpio.conf"
+fallback_image="/boot/initramfs-linux-fallback.img"
+fallback_options="-S autodetect"
+```
+
+```bash
+sudo pacman -S linux
+ls /boot
+sudo mousepad /boot/efi/clover/config.plist
+```
+
+- config.plist:
+```xml
+	<key>GUI</key>
+	<dict>
+        ...
+		<dict>
+			<key>Entries</key>
+			<array>
+                ...
+                <dict>
+					<key>Arguments</key>
+					<string>initrd=/initramfs-4.14-x86_64.img root=PARTUUID=0448e76a-c71c-4b2c-938a-daca4f9f611b rw quiet</string>
+					<key>Path</key>
+					<string>\vmlinuz-4.14-x86_64</string>
+					<key>Type</key>
+					<string>Linux</string>
+					<key>Volume</key>
+					<string>E6E13A43-D400-4D6B-8919-C9C3E5F7814F</string>
+				</dict>
+                ...
+                <dict>
+                    <key>Arguments</key>
+                    <string>initrd=/initramfs-linux.img root=PARTUUID=0448e76a-c71c-4b2c-938a-daca4f9f611b rw quiet</string>
+                    <key>Path</key>
+                    <string>\vmlinuz-linux</string>
+                    <key>Type</key>
+                    <string>Linux</string>
+                    <key>Volume</key>
+                    <string>E6E13A43-D400-4D6B-8919-C9C3E5F7814F</string>
+                </dict>
+                ...
+			</array>
+		</dict>
+	</dict>
 ```
 
 # ~~Sleep Solution~~
