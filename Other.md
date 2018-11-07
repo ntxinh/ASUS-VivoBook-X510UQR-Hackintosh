@@ -14,7 +14,7 @@
 - Windows: Dump by Extron EDID Manager
 - Linux: `xrandr --props`
 
-# DSDT & SSDT & 
+# DSDT & SSDT
 - Dump by Clover (F1 -> F4)
 
 # App neccessary
