@@ -1,5 +1,9 @@
 # ASUS VivoBook X510UQR Hackintosh
 
+- [Guide](Guide.md)
+- [Patch](Patch.md)
+- [Other](Other.md)
+
 ---
 
 # macOS VERSION
