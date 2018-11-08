@@ -1,4 +1,4 @@
-# Asus VivoBook X510UQR Hackintosh
+# ASUS VivoBook X510UQR Hackintosh
 
 ---
 
