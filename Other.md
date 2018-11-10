@@ -134,3 +134,9 @@ sudo mousepad /boot/efi/clover/config.plist
 
 # ~~Sleep Solution~~
 - ~~Energy Saver -> Never sleep~~
+
+# Ajust BIOS to boot from USB Boot Windows
+
+- Secure Boot: Disabled
+- Launch CSM: Enable
+- USB 3.0 : Disabled (If it exist)
