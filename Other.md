@@ -143,5 +143,8 @@ sudo mousepad /boot/efi/clover/config.plist
 
 # Install Windows 7 for new laptop not support old Windows
 - Create usb boot by GIGABYTE Windows USB Installation Tool
+  + https://www.gigabyte.com/vn/Support/Utility/Motherboard?kw=usb+installation&p=1
+  + https://www.gigabyte.com/vn/Support/Utility/Desktop-PC?kw=USB+Installation&p=1
+  + https://www.gigabyte.com/vn/Support/Utility/Enterprise?kw=usb+installation&p=1
 - Adjust BIOS > Launch CSM: Enable
-- Install Drivers by WanDrv7
+- Install Drivers by [WanDrv7](https://www.itsk.com/thread-392206-1-1.html)
