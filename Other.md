@@ -132,7 +132,7 @@ sudo mousepad /boot/efi/clover/config.plist
 	</dict>
 ```
 
-# ~~Sleep Solution~~
+# ~~Sleep Solution~~ (Only use it if sleep not work)
 - ~~Energy Saver -> Never sleep~~
 
 # Ajust BIOS to boot from USB Boot Windows
@@ -140,3 +140,8 @@ sudo mousepad /boot/efi/clover/config.plist
 - Secure Boot: Disabled
 - Launch CSM: Enable
 - USB 3.0 : Disabled (If it exist)
+
+# Install Windows 7 for new laptop not support old Windows
+- Create usb boot by GIGABYTE Windows USB Installation Tool
+- Adjust BIOS > Launch CSM: Enable
+- Install Drivers by WanDrv7
