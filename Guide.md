@@ -99,7 +99,7 @@ sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallme
 
 ```bash
 diskutil list
-diskutil mount disk0s1
+sudo diskutil mount disk0s1
 
 # OR
 
