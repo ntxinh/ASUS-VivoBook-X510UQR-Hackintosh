@@ -135,6 +135,7 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 # POST INSTALLATION
 
 - Copy POST EFI folder to your EFI / ESP Partition on your drive
+- Copy DSDT_SSDT_AFTER/BIOS_V302/DSDT.aml & SSDT-8.aml to /EFI/CLOVER/ACPI/patched/ (Disable discrete graphics to save battery & fix sleep)
 
 ## Trackpad - Tap to click
 

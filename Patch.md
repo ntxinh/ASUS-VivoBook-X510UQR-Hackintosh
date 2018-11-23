@@ -15,7 +15,7 @@ into_all all code_regex (\s+Zero){2,} removeall_matched;
 into device label PCI0 code_regex (\s+Zero){2,} removeall_matched;
 ```
 
-1. Replace all scope _SB.PCI0.I2C1 with this:
+1. Replace all scope _SB.PCI0.I2C1 with this: (No need, because hotpatch in Clover)
 
 - DSDT.dsl
 ```
@@ -140,7 +140,7 @@ into device label PCI0 code_regex (\s+Zero){2,} removeall_matched;
     }
 ```
 
-2. Add Window10 Patch:
+2. Add Window10 Patch: (No need, because hotpatch in Clover)
 
 - DSDT.dsl
 ```
@@ -150,7 +150,7 @@ into device label PCI0 code_regex (\s+Zero){2,} removeall_matched;
 into_all method code_regex If\s+\([\\]?_OSI\s+\(\"Windows\s2015\"\)\) replace_matched begin If(LOr(_OSI("Darwin"),_OSI("Windows 2015"))) end;
 ```
 
-3. Add GPIO Controller Enable
+3. Add GPIO Controller Enable: (No need, because hotpatch in Clover)
 
 - DSDT.dsl
 ```
@@ -198,4 +198,61 @@ end;
                     \_SB.PCI0.LPCB.EC0.WRAM (0x03A5, Zero)
                 }
             }
+```
+
+- Or use this patch for MaciASL:
+
+  + `[gfx0]` Disable from _INI (SSDT):
+```
+#Maintained by: RehabMan for: Laptop Patches
+#graphics_INI-disable.txt
+
+# The purpose of this patch is to add code to _INI to
+# disable nvidia/Radeon.  The patch is intended to be applied to
+# the SSDT that contains the _INI method for the discrete card.
+#
+# Usually the path is \_SB.PCI0.PEG0.PEGP and the method name
+# is _OFF, but some systems use different names.
+#
+# The path of _OFF may have to be customized to match your SSDTs
+# In addition the label of EC0 may need to be changed (H_EC, EC, etc)
+#
+# Note: Uncomment the External line if your _OFF method is in
+#   a separate SSDT.
+#
+
+into method label _INI parent_label \_SB.PCI0.RP01.PEGP insert
+begin
+//added to turn nvidia/radeon off\n
+//External(\_SB.PCI0.RP01.PEGP._OFF, MethodObj)\n
+_OFF()\n
+end;
+```
+
+  + `[gfx0]` Disable from _REG (DSDT):
+```
+#Maintained by: RehabMan for: Laptop Patches
+#graphics_REG-disable.txt
+
+# The purpose of this patch is to add code to _REG in EC
+# to disable nvidia/Radeon
+#
+# The path of _OFF may have to be customized to match your SSDTs
+# The patch attempts to identify the correct _REG by using
+# the ACPI PNP identifier for the EC.
+
+into method label _REG parent_hid PNP0C09 insert
+begin
+//added to turn nvidia/radeon off\n
+If (LAnd(LEqual(Arg0,3),LEqual(Arg1,1)))\n
+{\n
+    \_SB.PCI0.LPCB.EC0.SPIN (0x96, Zero)\n
+    Store (\_SB.PCI0.LPCB.EC0.RRAM (0x0521), Local0)\n
+    And (Local0, 0xCF, Local0)\n
+    \_SB.PCI0.LPCB.EC0.WRAM (0x0521, Local0)\n
+    \_SB.PCI0.LPCB.EC0.WRAM (0x0520, 0x89)\n
+    \_SB.PCI0.LPCB.EC0.WRAM (0x03A4, Zero)\n
+    \_SB.PCI0.LPCB.EC0.WRAM (0x03A5, Zero)\n
+}\n
+end;
 ```

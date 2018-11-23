@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Wed Nov  7 19:59:55 2018
+ * Disassembly of DSDT.aml, Fri Nov 23 20:56:09 2018
  *
  * Original Table Header:
  *     Signature        "DSDT"
  *     Length           0x0002BAC5 (178885)
  *     Revision         0x02
- *     Checksum         0xB0
+ *     Checksum         0x30
  *     OEM ID           "_ASUS_"
  *     OEM Table ID     "Notebook"
  *     OEM Revision     0x01072009 (17244169)
@@ -213,7 +213,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
     Name (TPMC, 0xFFFFFFFF)
     Name (TPMM, 0xFED40000)
     Name (FTPM, 0xFED40040)
-    Name (PPIM, 0x8ADD2F98)
+    Name (PPIM, 0x8ADD0F98)
     Name (PPIL, 0x1C)
     Name (AMDT, Zero)
     Name (TPMF, One)
@@ -227,7 +227,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
     Name (TOPM, 0x00000000)
     Name (ROMS, 0xFFE00000)
     Name (VGAF, One)
-    OperationRegion (GNVS, SystemMemory, 0x8ADCD000, 0x0745)
+    OperationRegion (GNVS, SystemMemory, 0x8ADCB000, 0x0745)
     Field (GNVS, AnyAcc, Lock, Preserve)
     {
         OSYS,   16, 
@@ -11096,7 +11096,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
         }
     }
 
-    Name (PNVB, 0x8ADD2018)
+    Name (PNVB, 0x8ADD0018)
     Name (PNVL, 0x0287)
     If (LEqual (ECR1, One))
     {
@@ -15370,9 +15370,17 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                
-                Return (0x0F)
+                If (LEqual (SBRG, Zero))
+                {
+                    Return (Zero)
+                }
 
+                If (LEqual (GPEN, Zero))
+                {
+                    Return (Zero)
+                }
+
+                Return (0x0F)
             }
         }
     }
@@ -18649,7 +18657,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Store (0x07DD, OSYS)
                 }
 
-                If(LOr(_OSI("Darwin"),_OSI("Windows 2015")))
+                If (_OSI ("Windows 2015"))
                 {
                     Store (0x07DF, OSYS)
                 }
@@ -38011,7 +38019,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
     Scope (_SB)
     {
-        OperationRegion (RAMW, SystemMemory, 0x8AE03000, 0x0100)
+        OperationRegion (RAMW, SystemMemory, 0x8AE01000, 0x0100)
         Field (RAMW, AnyAcc, NoLock, Preserve)
         {
             AMLS,   32, 
@@ -40230,7 +40238,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     \_SB.PCI0.LPCB.EC0.WRAM (0x03A4, Zero)
                     \_SB.PCI0.LPCB.EC0.WRAM (0x03A5, Zero)
                 }
-            }            
+            }
         }
     }
 
@@ -43398,15 +43406,6 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                 "FTE1300", 
                 "FTE1300"
             })
-            Name (SBFG, ResourceTemplate ()
-            {
-                GpioInt (Level, ActiveLow, ExclusiveAndWake, PullDefault, 0x0000,
-                    "\\_SB.PCI0.GPI0", 0x00, ResourceConsumer, ,
-                    )
-                    {   // Pin list
-                        0x0055
-                    }
-            })
             Method (_HID, 0, NotSerialized)  // _HID: Hardware ID
             {
                 If (And (TPDI, 0x04))
@@ -43435,14 +43434,14 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         {
                             Return (Buffer (One)
                             {
-                                0x03                                           
+                                 0x03                                           
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                0x00                                           
+                                 0x00                                           
                             })
                         }
                     }
@@ -43456,26 +43455,35 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                 {
                     Return (Buffer (One)
                     {
-                        0x00                                           
+                         0x00                                           
                     })
                 }
             }
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
+                If (LOr (LNotEqual (TPIF, One), LAnd (DSYN, One)))
+                {
+                    Return (Zero)
+                }
+
                 Return (0x0F)
             }
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
-                Name (SBFB, ResourceTemplate ()
+                Name (SBFI, ResourceTemplate ()
                 {
                     I2cSerialBusV2 (0x0015, ControllerInitiated, 0x00061A80,
                         AddressingMode7Bit, "\\_SB.PCI0.I2C1",
                         0x00, ResourceConsumer, , Exclusive,
                         )
+                    Interrupt (ResourceConsumer, Level, ActiveLow, Exclusive, ,, )
+                    {
+                        0x0000006D,
+                    }
                 })
-                Return (ConcatenateResTemplate (SBFB, SBFG))
+                Return (SBFI)
             }
         }
     }

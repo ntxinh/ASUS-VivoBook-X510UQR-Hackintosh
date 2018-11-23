@@ -16,3 +16,4 @@
 /EFI_AFTER/EFI/CLOVER/themes/Asus/options_anim/.*
 /EFI_AFTER/EFI/CLOVER/themes/embedded/.*
 /EFI_AFTER/EFI/CLOVER/tools/.*
+*.DS_Store
