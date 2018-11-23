@@ -116,6 +116,7 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 - From Boot Menu, choose your USB thumb drive.
 - Clover boot menu 
 - Choose - Boot OS X install from Install macOS ..
+- Plug Mouse and move it up down left right and Next
 - Choose Language : English
 - Select Disk Utility
 - From Disk Utility Menu --> View / Show All Devices
