@@ -1,12 +1,3 @@
-# TO DO
-
-- [ ] EC Reset
-- [ ] Speedstep
-- [ ] Benchmark
-- [ ] Native Power Management
-- [ ] Disable Apple System Integrity Protection ( SIP )
-- [ ] TIDY CLOVER BOOT SCREEN
-
 # Specification
 - Dump by AIDA64 Engineer
 
