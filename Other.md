@@ -27,20 +27,31 @@ The user-interface is poor and they tend to cause instability, especially with s
 # Add Grub/Grub2 to Clover
 
 ```xml
-<dict>
-    <key>Disabled</key>
-    <false/>
-    <key>Ignore</key>
-    <false/>
-    <key>Path</key>
-    <string>\EFI\manjaro\grubx64.efi</string>
-    <key>Title</key>
-    <string>Manjaro</string>
-    <key>Type</key>
-    <string>Linux</string>
-    <key>VolumeType</key>
-    <string>Internal</string>
-</dict>
+	<key>GUI</key>
+	<dict>
+        ...
+		<dict>
+			<key>Entries</key>
+			<array>
+                ...
+				<dict>
+					<key>Disabled</key>
+					<false/>
+					<key>Ignore</key>
+					<false/>
+					<key>Path</key>
+					<string>\EFI\manjaro\grubx64.efi</string>
+					<key>Full Title</key>
+					<string>Manjaro GRUB</string>
+					<key>Type</key>
+					<string>Linux</string>
+					<key>VolumeType</key>
+					<string>Internal</string>
+				</dict>
+                ...
+			</array>
+		</dict>
+	</dict>
 ```
 
 # Add Arch Linux to Clover
