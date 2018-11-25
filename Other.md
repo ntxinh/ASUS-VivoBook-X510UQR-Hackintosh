@@ -41,7 +41,7 @@ The user-interface is poor and they tend to cause instability, especially with s
 					<false/>
 					<key>Path</key>
 					<string>\EFI\manjaro\grubx64.efi</string>
-					<key>Full Title</key>
+					<key>FullTitle</key>
 					<string>Manjaro GRUB</string>
 					<key>Type</key>
 					<string>Linux</string>
