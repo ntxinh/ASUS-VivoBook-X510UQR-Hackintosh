@@ -224,7 +224,7 @@ end;
 into method label _INI parent_label \_SB.PCI0.RP01.PEGP insert
 begin
 //added to turn nvidia/radeon off\n
-//External(\_SB.PCI0.RP01.PEGP._OFF, MethodObj)\n
+External(\_SB.PCI0.RP01.PEGP._OFF, MethodObj)\n
 _OFF()\n
 end;
 ```
