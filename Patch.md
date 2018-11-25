@@ -165,7 +165,7 @@ Return (0x0F)
 end;
 ```
 
-4. Disabling discrete graphics in dual-GPU laptops
+4. Disabling discrete graphics in dual-GPU laptops (It will fix sleep)
 
 - SSDT-8.dsl : Look for "Method (_INI"
 ```

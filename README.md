@@ -1,4 +1,4 @@
-# ASUS VivoBook X510UQR Hackintosh
+# Hackintosh for ASUS VivoBook X510UQR (ASUS VivoBook S15 S510UQ)
 
 - [Guide](Guide.md)
 - [Patch](Patch.md)
@@ -8,7 +8,8 @@
 
 # macOS VERSION
 - 10.13.6 High Sierra
-- 10.14 Mojave
+- 10.14.0 Mojave
+- 10.14.1 Mojave
 
 # SPECIFICATIONS
 
@@ -56,25 +57,22 @@ _Recommed replace card wifi with DW1560 (Broadcom BCM4352, M2, NGFF)_
 - [x] Temporature (HWMonitor)
 - [x] Disabling discrete graphics GPU (https://www.tonymacx86.com/threads/guide-disabling-discrete-graphics-in-dual-gpu-laptops.163772/)
 - ~~[ ] Ethernet (This laptop not support)~~
-- [ ] Hardware Acceleration
-- [ ] Personal Hotspot
-- [ ] Power Management and P-States
-- [ ] iCloud
-- [ ] iMessage
-- [ ] Airdrop
-- [ ] AirPlay
-- [ ] iBooks
-- [ ] HandOff
+- [ ] Hardware Acceleration (Not test yet)
+- [ ] Personal Hotspot (Not test yet)
+- [ ] Power Management and P-States (Not test yet)
+- [ ] iCloud (Not test yet)
+- [ ] iMessage (Not test yet)
+- [ ] Airdrop (Not test yet)
+- [ ] AirPlay (Not test yet)
+- [ ] iBooks (Not test yet)
+- [ ] HandOff (Not test yet)
 
 # KNOWN ISSUES
-- ~~HDMI without Audio~~
-- ~~Trackpad - Sometime left & right click not working~~ (Use Tap to click)
-- ~~Freezes on wake from sleep (Always test sleep without external devices plugged in)~~ (Patch fixed it)
-- ~~Battery status~~ (Patch fixed it)
 
 # WIFI SOLUTION
-- [Use USB Wifi TP-Link Archer T2U v2 (AC600, MT7650)](https://www.tp-link.com/en/products/details/cat-11_Archer-T2U.html)
-- https://github.com/chris1111/TP-LINK-WIFI-Network-macOS
+- USB Wifi:
+  + [USB Wifi TP-Link Archer T2U v2 (AC600, MT7650)](https://www.tp-link.com/en/products/details/cat-11_Archer-T2U.html) and [Kexts](https://github.com/chris1111/TP-LINK-WIFI-Network-macOS)
+- USB Ethernet Adapter:
 
 # SPECIAL THANKS
 - [tctien342](https://github.com/tctien342/) [EFI](https://github.com/tctien342/Asus-Vivobook-S510UA-High-Sierra-10.13-Hackintosh)
@@ -94,3 +92,4 @@ _Recommed replace card wifi with DW1560 (Broadcom BCM4352, M2, NGFF)_
 - https://www.insanelymac.com/forum/topic/330677-successguide-glasgoods-high-sierra-coffeelake-asus-strix-z370-g-i7-8700-gtx1080ti-uhd/
 - https://github.com/RehabMan/OS-X-Clover-Laptop-Config/
 - https://github.com/chris1111/Wireless-USB-Adapter-Clover
+- and more...
