@@ -93,3 +93,10 @@ _Recommed replace card wifi with DW1560 (Broadcom BCM4352, M2, NGFF)_
 - https://github.com/RehabMan/OS-X-Clover-Laptop-Config/
 - https://github.com/chris1111/Wireless-USB-Adapter-Clover
 - and more...
+
+# SCREENSHOTS
+
+![Overview](SCREENSHOTS/1.png)
+![Overview](SCREENSHOTS/2.png)
+![Overview](SCREENSHOTS/3.png)
+![Overview](SCREENSHOTS/4.png)
