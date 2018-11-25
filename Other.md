@@ -97,25 +97,29 @@ sudo mousepad /boot/efi/clover/config.plist
 			<array>
                 ...
                 <dict>
-					<key>Arguments</key>
-					<string>initrd=/initramfs-4.14-x86_64.img root=PARTUUID=0448e76a-c71c-4b2c-938a-daca4f9f611b rw quiet</string>
-					<key>Path</key>
-					<string>\vmlinuz-4.14-x86_64</string>
-					<key>Type</key>
-					<string>Linux</string>
-					<key>Volume</key>
-					<string>E6E13A43-D400-4D6B-8919-C9C3E5F7814F</string>
-				</dict>
+			<key>Arguments</key>
+			<string>initrd=/initramfs-4.14-x86_64.img root=PARTUUID=0448e76a-c71c-4b2c-938a-daca4f9f611b rw quiet</string>
+			<key>Path</key>
+			<string>\vmlinuz-4.14-x86_64</string>
+			<key>Title</key>
+			<string>Manjaro</string>
+			<key>Type</key>
+			<string>Linux</string>
+			<key>Volume</key>
+			<string>E6E13A43-D400-4D6B-8919-C9C3E5F7814F</string>
+		</dict>
                 ...
                 <dict>
-                    <key>Arguments</key>
-                    <string>initrd=/initramfs-linux.img root=PARTUUID=0448e76a-c71c-4b2c-938a-daca4f9f611b rw quiet</string>
-                    <key>Path</key>
-                    <string>\vmlinuz-linux</string>
-                    <key>Type</key>
-                    <string>Linux</string>
-                    <key>Volume</key>
-                    <string>E6E13A43-D400-4D6B-8919-C9C3E5F7814F</string>
+			<key>Arguments</key>
+			<string>initrd=/initramfs-linux.img root=PARTUUID=0448e76a-c71c-4b2c-938a-daca4f9f611b rw quiet</string>
+			<key>Path</key>
+			<string>\vmlinuz-linux</string>
+			<key>Title</key>
+			<string>Arch Linux</string>
+			<key>Type</key>
+			<string>Linux</string>
+			<key>Volume</key>
+			<string>E6E13A43-D400-4D6B-8919-C9C3E5F7814F</string>
                 </dict>
                 ...
 			</array>
