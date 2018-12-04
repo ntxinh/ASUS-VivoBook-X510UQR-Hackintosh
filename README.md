@@ -1,4 +1,4 @@
-# Hackintosh for ASUS VivoBook X510UQR (ASUS VivoBook S15 S510UQ)
+# Hackintosh for ASUS VivoBook X510UQR (ASUS VivoBook S15 S510UQ-BQ483T)
 
 - [Guide](Guide.md)
 - [Patch](Patch.md)
