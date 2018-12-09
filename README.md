@@ -10,6 +10,7 @@
 - 10.13.6 High Sierra
 - 10.14.0 Mojave
 - 10.14.1 Mojave
+- 10.14.2 Mojave
 
 # SPECIFICATIONS
 
@@ -68,6 +69,7 @@ _Recommed replace card wifi with DW1560 (Broadcom BCM4352, M2, NGFF)_
 - [ ] HandOff (Not test yet)
 
 # KNOWN ISSUES
+- Fn + F9 to Disabled trackpad not working
 
 # WIFI SOLUTION
 - USB Wifi:
