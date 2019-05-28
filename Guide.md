@@ -121,7 +121,8 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/efi
 - Select Disk Utility
 - From Disk Utility Menu --> View / Show All Devices
 - ~~Erase, disk. Give Name / Format: Mac OS Extended ( Journaled) / Scheme: GUID Partition Map~~
-- Partition, Format: APFS and apply
+- Select HACKINTOSH partition created in pre-installation
+- Click Partition, Format: APFS and apply
 - Click Done and close Disk Utility window
 - From macOS Utilities screen select Install macOS
 - Continue
