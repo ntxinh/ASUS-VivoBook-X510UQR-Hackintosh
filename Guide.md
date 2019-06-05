@@ -31,8 +31,8 @@ _F2 to enter BIOS - Switch to Advanced Mode F7_
 - __Exit \ Load Optimized Defaults : Yes__
 - Advanced \ Internal Pointing Device : Enabled
 - Advanced \ Wake On Lid Open : Enabled
-- Advanced \ Intel Virtualization Technology : Enabled
-- Advanced \ Intel AES-NI : Enabled
+- __Advanced \ Intel Virtualization Technology : Disabled__
+- __Advanced \ Intel AES-NI : Disabled__
 - __Advanced \ VT-d : Disabled__
 - Advanced \ SMART Settings \ SMART Self Test : On
 - __Advanced \ Network Stack Configuration \ Network Stack : Disabled__
