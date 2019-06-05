@@ -8,9 +8,7 @@
 
 # macOS VERSION
 - 10.13.6 High Sierra
-- 10.14.0 Mojave
-- 10.14.1 Mojave
-- 10.14.2 Mojave
+- 10.14.x Mojave
 
 # SPECIFICATIONS
 
